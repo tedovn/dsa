@@ -1,0 +1,36 @@
+package Homework3;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class ListofProducts {
+
+	public static void main(String[] args) throws IOException {
+		Product products = new Product();
+		ArrayList<Product> products2 = new ArrayList<>(); 
+		try (BufferedReader inputBufferedReader = new BufferedReader(
+				new FileReader("c:/input.txt"));) {
+					
+			while (true) {
+				String input = inputBufferedReader.readLine();	
+				if (input == null) {
+					break;
+				}
+				
+				String[] arr = input.split(" ");
+				products.setFruits(arr[0], Double.valueOf(arr[1]));
+				products2.add(products);
+			}
+		}
+		catch (Exception e) {
+			System.out.println("Error!");
+		}
+		for (Product g : products2) {
+			 System.out.println(g.);
+			 
+		}
+	}
+}
